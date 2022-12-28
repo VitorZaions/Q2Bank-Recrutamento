@@ -1,4 +1,4 @@
-var host = "http://api.vitorzaions.top/";
+var host = "http://api.vitorzaions.top";
 var porta = "";
 
 
