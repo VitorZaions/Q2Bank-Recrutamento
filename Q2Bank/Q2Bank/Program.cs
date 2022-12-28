@@ -5,6 +5,8 @@ using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using Q2Bank.Data;
+using Q2Bank.Repositorios;
+using Q2Bank.Repositorios.Interfaces;
 using Q2Bank.Services;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -13,9 +15,15 @@ var builder = WebApplication.CreateBuilder(args);
 
 var connection = builder.Configuration.GetConnectionString("DatabaseQ2");
 
+
 builder.Services.AddEntityFrameworkMySql().AddDbContext<DataContext>(
     options => options.UseMySql(connection, ServerVersion.AutoDetect(connection))
     );
+
+builder.Services.AddScoped<IEmpresaRepositorio, EmpresaRepositorio>();
+builder.Services.AddScoped<IFuncionarioRepositorio, FuncionarioRepositorio>();
+builder.Services.AddScoped<IUsuarioRepositorio, UsuarioRepositorio>();
+
 
 builder.Services.AddCors();
 builder.Services.AddAuthentication(options =>

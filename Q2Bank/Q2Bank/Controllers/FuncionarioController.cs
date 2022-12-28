@@ -3,6 +3,9 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Q2Bank.Data;
 using Q2Bank.Models;
+using Q2Bank.Repositorios;
+using Q2Bank.Repositorios.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -14,11 +17,14 @@ namespace Q2Bank.Controllers
 
     public class FuncionarioController : Controller
     {
-
+        private readonly IFuncionarioRepositorio _funcionarioRepositorio;
         private readonly ILogger<FuncionarioController> _logger;
-        public FuncionarioController(ILogger<FuncionarioController> logger)
+
+
+        public FuncionarioController(ILogger<FuncionarioController> logger, IFuncionarioRepositorio funcionarioRepositorio)
         {
             _logger = logger;
+            _funcionarioRepositorio = funcionarioRepositorio;
         }
 
 
@@ -26,15 +32,15 @@ namespace Q2Bank.Controllers
         [Route("listar")]
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
         [Description("Obter funcionario por empresa")]
-        public async Task<ActionResult<List<Funcionario>>> GetFuncionarios([FromServices] DataContext context, int IDEmpresa)
+        public async Task<ActionResult<List<Funcionario>>> GetFuncionarios(int IDEmpresa)
         {
             //Verifica se tem permissão na empresa
-            Empresa Emp = context.Empresa.Where(o => o.Id == IDEmpresa && o.UsuarioId == Convert.ToDecimal(User.Identity.Name)).FirstOrDefault();
+            bool PermEmpresa = await _funcionarioRepositorio.VerificarPermissaoEmpresa(IDEmpresa, Convert.ToInt32(User.Identity.Name));
 
-            if (Emp == null)
+            if (PermEmpresa == false)
                 return Unauthorized("Sem permissão para obter os funcionários da empresa.");
 
-            List<Funcionario> Funcionarios = context.Funcionario.Where(o => o.EmpresaID == IDEmpresa).ToList();
+            var Funcionarios = await _funcionarioRepositorio.GetFuncionarios(IDEmpresa);
             
             if (Funcionarios.Count <= 0)
             {
@@ -49,20 +55,17 @@ namespace Q2Bank.Controllers
         [Route("obter")]
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
         [Description("Obter funcionário por id")]
-        public async Task<ActionResult<Funcionario>> Get([FromServices] DataContext context, int IDFuncionario)
+        public async Task<ActionResult<Funcionario>> GetFuncionarioPorId(int IDFuncionario)
         {
-            Funcionario Func = context.Funcionario.Where(o => o.Id == IDFuncionario).FirstOrDefault();
-            Empresa Emp = context.Empresa.Where(o => o.Id == Func.EmpresaID && o.UsuarioId == Convert.ToDecimal(User.Identity.Name)).FirstOrDefault();
+            Funcionario Func = await _funcionarioRepositorio.GetFuncionarioPorId(IDFuncionario);
+          
+            bool PemEmpresa = await _funcionarioRepositorio.VerificarPermissaoEmpresa(Func.EmpresaID, Convert.ToInt32(User.Identity.Name));
 
             if (Func == null)
-            {
                 return NotFound("Funcionário não encontrado");
-            }
 
-            if (Emp == null)
-            {
+            if (PemEmpresa == false)
                 return Unauthorized("Sem autorização para editar este funcionário");
-            }
 
             return Func;
         }
@@ -72,25 +75,24 @@ namespace Q2Bank.Controllers
         [Route("atualizar")]
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
         [Description("Atualizar Funcionário")]
-        public async Task<ActionResult<Funcionario>> Put([FromServices] DataContext context, [FromBody] Funcionario model)
+        public async Task<ActionResult<Funcionario>> AtualizarFuncionario([FromServices] DataContext _context, [FromBody] Funcionario model)
         {
             if (ModelState.IsValid)
             {
-                Funcionario Funcion = context.Funcionario.Where(o => o.Id == model.Id).FirstOrDefault();
+                Funcionario Funcion = _context.Funcionario.Where(o => o.Id == model.Id).FirstOrDefault();
 
                 if (Funcion == null)
                     return NotFound("Funcionário não encontrado.");
 
                 //Verifica se tem permissão na empresa
-                Empresa Emp = context.Empresa.Where(o => o.Id == model.EmpresaID && o.UsuarioId == Convert.ToDecimal(User.Identity.Name)).FirstOrDefault();
 
-                if (Emp == null)
+                bool PermEmpresa = await _funcionarioRepositorio.VerificarPermissaoEmpresa(model.EmpresaID, Convert.ToInt32(User.Identity.Name));
+
+                if (PermEmpresa == false)
                     return Unauthorized("Sem permissão para criar o funcionário.");
 
-                context.ChangeTracker.Clear();
-                context.Funcionario.Update(model);
-                await context.SaveChangesAsync();
-                return model;
+                return await _funcionarioRepositorio.AtualizarFuncionario(model);
+
             }
             else
             {
@@ -102,26 +104,22 @@ namespace Q2Bank.Controllers
         [Route("deletar")]
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
         [Description("Deletar Funcionário")]
-        public async Task<ActionResult<Funcionario>> Delete([FromServices] DataContext context, [FromBody] int IDFuncionario)
+        public async Task<ActionResult<Funcionario>> Deletar([FromBody] int IDFuncionario)
         {
             if (ModelState.IsValid)
             {
 
-                Funcionario Funcion = context.Funcionario.Where(o => o.Id == IDFuncionario).FirstOrDefault();
+                Funcionario Funcion = await _funcionarioRepositorio.GetFuncionarioPorId(IDFuncionario);
                 if (Funcion == null)
                     return NotFound("Funcionário não encontrado.");
 
                 //Verifica se tem permissão na empresa
-                Empresa Emp = context.Empresa.Where(o => o.Id == Funcion.EmpresaID && o.UsuarioId == Convert.ToDecimal(User.Identity.Name)).FirstOrDefault();
+                bool PermEmpresa = await _funcionarioRepositorio.VerificarPermissaoEmpresa(Funcion.EmpresaID, Convert.ToInt32(User.Identity.Name));
 
-                if (Emp == null)
+                if (PermEmpresa == false)
                     return Unauthorized("Sem permissão para remover o funcionário.");
-                
-                //Tudo certo, pode excluir
-                context.Funcionario.Remove(Funcion);
-                await context.SaveChangesAsync();
 
-                return Funcion;
+                return await _funcionarioRepositorio.Deletar(Funcion);
             }
             else
             {
@@ -134,19 +132,21 @@ namespace Q2Bank.Controllers
         [Route("novo")]
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
         [Description("Criar Funcionário")]
-        public async Task<ActionResult<Funcionario>> Post([FromServices] DataContext context, [FromBody] Funcionario model)
+        public async Task<ActionResult<Funcionario>> Novo([FromServices] DataContext _context, [FromBody] Funcionario model)
         {
             if (ModelState.IsValid)
             {
-                //Verifica se tem permissão na empresa
-                Empresa Emp = context.Empresa.Where(o => o.Id == model.EmpresaID && o.UsuarioId == Convert.ToDecimal(User.Identity.Name)).FirstOrDefault();
+                if (model.Id != 0)
+                    return BadRequest("Não é possível informar o ID.");
 
-                if (Emp == null)
+                //Verifica se tem permissão na empresa
+
+                bool PermEmpresa = await _funcionarioRepositorio.VerificarPermissaoEmpresa(model.EmpresaID, Convert.ToInt32(User.Identity.Name));
+
+                if (PermEmpresa == false)
                     return Unauthorized("Sem permissão para criar o funcionário.");
 
-                context.Funcionario.Add(model);
-                await context.SaveChangesAsync();
-                return model;
+                return await _funcionarioRepositorio.Novo(model);
             }
             else
             {

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\vitor\\Documents\\Visual Studio 2022\\Q2Bank\\Q2Bank\\Q2Bank.csproj": {}
+    "C:\\Users\\vitor\\Documents\\Visual Studio 2022\\Q2BankGit\\Q2Bank---Recrutamento\\Q2Bank\\Q2Bank\\Q2Bank.csproj": {}
   },
   "projects": {
-    "C:\\Users\\vitor\\Documents\\Visual Studio 2022\\Q2Bank\\Q2Bank\\Q2Bank.csproj": {
+    "C:\\Users\\vitor\\Documents\\Visual Studio 2022\\Q2BankGit\\Q2Bank---Recrutamento\\Q2Bank\\Q2Bank\\Q2Bank.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\vitor\\Documents\\Visual Studio 2022\\Q2Bank\\Q2Bank\\Q2Bank.csproj",
+        "projectUniqueName": "C:\\Users\\vitor\\Documents\\Visual Studio 2022\\Q2BankGit\\Q2Bank---Recrutamento\\Q2Bank\\Q2Bank\\Q2Bank.csproj",
         "projectName": "Q2Bank",
-        "projectPath": "C:\\Users\\vitor\\Documents\\Visual Studio 2022\\Q2Bank\\Q2Bank\\Q2Bank.csproj",
+        "projectPath": "C:\\Users\\vitor\\Documents\\Visual Studio 2022\\Q2BankGit\\Q2Bank---Recrutamento\\Q2Bank\\Q2Bank\\Q2Bank.csproj",
         "packagesPath": "C:\\Users\\vitor\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\vitor\\Documents\\Visual Studio 2022\\Q2Bank\\Q2Bank\\obj\\",
+        "outputPath": "C:\\Users\\vitor\\Documents\\Visual Studio 2022\\Q2BankGit\\Q2Bank---Recrutamento\\Q2Bank\\Q2Bank\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -69,6 +69,10 @@
               "target": "Package",
               "version": "[6.25.1, )"
             },
+            "Moq": {
+              "target": "Package",
+              "version": "[4.18.3, )"
+            },
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[13.0.2, )"
@@ -84,6 +88,28 @@
             "System.IdentityModel.Tokens.Jwt": {
               "target": "Package",
               "version": "[6.25.1, )"
+            },
+            "xunit": {
+              "target": "Package",
+              "version": "[2.4.2, )"
+            },
+            "xunit.abstractions": {
+              "target": "Package",
+              "version": "[2.0.3, )"
+            },
+            "xunit.assert": {
+              "target": "Package",
+              "version": "[2.4.2, )"
+            },
+            "xunit.core": {
+              "target": "Package",
+              "version": "[2.4.2, )"
+            },
+            "xunit.runner.visualstudio": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.4.5, )"
             }
           },
           "imports": [
