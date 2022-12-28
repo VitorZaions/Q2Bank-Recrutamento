@@ -1,0 +1,228 @@
+ <html>
+    <head>
+    <title>Q2Bank - Registro</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+
+    <!-- Adicionando JQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+            crossorigin="anonymous"></script>
+
+            
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-maskmoney/3.0.2/jquery.maskMoney.min.js"></script>
+
+    <!--<script src="assets/js/cep.js"></script>-->
+    <script src="assets/js/config.js"></script>
+    <script src="assets/js/funcionario.js"></script>
+    <script src="assets/js/logout.js"></script>
+    <!-- Adicionando Javascript -->
+    
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">      
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="assets/css/style.css">  
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary gradient-custom-3">
+      <a class="navbar-brand" href="index.html">Q2Bank</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="index.html">Início <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="perfil.html">Perfil</a>
+          </li>
+        </ul>
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="#" id="logout">Logout</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+
+  </head>
+
+    <body>
+
+
+      <div class="modal fade" id="LoadingModal" tabindex="-1" role="dialog" aria-labelledby="LoadingModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">  
+            <div class="modal-body">             
+              <div class="d-flex justify-content-center">
+                <div class="spinner-border text-primary" role="status">
+                  <span class="sr-only">Loading...</span>
+                </div>                
+              </div>
+              <div class="d-flex justify-content-center mt-4" id="loading_text"></div>
+             
+            </div>
+            
+          </div>
+        </div>
+      </div>
+
+
+        <div class="modal fade" id="ModalError" tabindex="-1" role="dialog" aria-labelledby="ModalErrorLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="ModalErrorLabel">Aviso</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div id="text_modal" class="modal-body">
+                  ...
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <main class="container">
+
+            <div class="starter-template text-center py-5 px-3">
+              <h1>Cadastro de Funcionário</h1>
+            </div>
+
+
+            <a class="backbutton" href="#"><i class="fa fa-arrow-left fa-x4 mb-3" aria-hidden="true"></i>&nbsp; Voltar</a>
+
+
+            <div class="card col-12 mb-3">
+
+              <form>
+               
+                <div class="form-group mt-2">
+                  <label for="exampleFormControlInput1">Nome</label>
+                  <input type="text" class="form-control" id="nome" placeholder="" maxlength="200">
+                </div>
+
+                <div class="form-group mt-2">
+                  <label for="exampleFormControlInput1">Salário</label>
+                  <input type="text" class="form-control" id="salario">
+                </div>
+
+                <div class="form-group">
+                  <label for="exampleFormControlSelect1">Cargo</label>
+                  <select class="form-control" id="cargo">
+                    <option>Programador</option>
+                    <option>Designer</option>
+                    <option>Administração</option>
+                    <option>Arquitetura</option>
+                    <option>Jornalismo</option>
+                    <option>Psicologia</option>                    
+                  </select>
+                </div>
+              </form>
+              
+            </div>
+
+            
+            <div class="d-flex">
+              <div class="ml-auto mt-1 mb-4">
+                <a href="index.html" class="btn btn-danger btn-lg active" role="button" aria-pressed="true">Cancelar</a>
+                <button type="button" id="criar" class="btn btn-primary ml-2 btn-lg" data-loading-text="LOADING...">Criar</button>
+              </div>
+            </div>
+            
+
+          </main><!-- /.container -->
+
+         <!--<section class="h-100 gradient-form" style="background-color: #eee;">
+            <div class="container py-5 h-100">
+              <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-xl-10">
+                  <div class="card rounded-3 text-black">
+                    <div class="row g-0">
+                      <div class="col-lg-6">
+                        <div class="card-body p-md-5 mx-md-4">
+          
+                          <div class="text-center">
+                            <img src="https://s3.amazonaws.com/gupy5/production/companies/30166/career/66802/images/2022-05-19_19-41_logo.png"
+                              style="width: 185px;" alt="logo">
+                            <h4 class="mt-4 mb-5 pb-1">Q2 Bank - Registro</h4>
+                          </div>
+          
+                          <form>
+                            <p>Informe seus dados.</p>
+          
+                            <div class="form-outline mb-2">
+                                <label class="form-label" for="form2Example11">Usuário</label>
+                                <input type="user" id="username" class="form-control"
+                                placeholder="Insira seu usuário" />
+                            </div>
+          
+                            <div class="form-outline mb-2">
+                                <label class="form-label" for="form2Example22">Senha</label>
+                                <input type="password" id="password" class="form-control" />
+                            </div>
+
+                            <div class="form-outline mb-2">
+                              <label class="form-label" for="form2Example22">Confirmar senha</label>
+                              <input type="password" id="password2" class="form-control" />
+                          </div>
+          
+                          <div class="form-outline mb-2">
+                            <label class="form-label" for="form2Example11">Nome</label>
+                            <input type="user" id="nome" class="form-control"
+                            placeholder="Insira seu nome completo" />
+                        </div>
+
+                            <div class="text-center pt-1 pb-1">
+                              <button id="registrar" class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" type="button" data-loading-text="LOADING...">Registrar</button>
+                            </div>
+
+                            <a class="text-muted" href="login.html">Voltar ao login </a>
+          
+                          </form>
+          
+                        </div>
+                      </div>
+                      <div class="col-lg-6 d-flex align-items-center gradient-custom-2">
+                        <div class="text-white px-3 py-4 p-md-5 mx-md-4">
+                          <h4 class="mb-4">Teste de recrutamento</h4>
+                          <p class="small mb-0">Página de teste para os CRUDS propostos no recrutamento do Q2Bank.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>-->
+        
+        
+        <!-- Inicio do formulario -->
+     <!-- <form method="get" action=".">
+        <label>Cep:
+        <input name="cep" type="text" id="cep" value="" size="10" maxlength="9" /></label><br />
+        <label>Rua:
+        <input name="rua" type="text" id="rua" size="60" /></label><br />
+        <label>Bairro:
+        <input name="bairro" type="text" id="bairro" size="40" /></label><br />
+        <label>Cidade:
+        <input name="cidade" type="text" id="cidade" size="40" /></label><br />
+        <label>Estado:
+        <input name="uf" type="text" id="uf" size="2" /></label><br />
+        <label>IBGE:
+        <input name="ibge" type="text" id="ibge" size="8" /></label><br />
+      </form>-->
+    </body>
+
+    </html>
