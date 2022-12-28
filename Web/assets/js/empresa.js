@@ -221,7 +221,7 @@ spOptions = {
                
         $.ajax({
             type: 'POST',
-            url: 'https://' + host + ':'+ porta +'/empresa/novo',
+            url: 'https://' + host + porta +'/empresa/novo',
             headers: {Authorization: Final},
             data: JSON.stringify(Empresa),
             success: function (data) 

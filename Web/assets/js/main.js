@@ -28,7 +28,7 @@ $(document).ready(function() {
 
     $.ajax({
         type: 'GET',
-        url: 'https://' + host + ':'+ porta +'/empresa/listar',
+        url: 'https://' + host + porta +'/empresa/listar',
         async: false,
         headers: {Authorization: Final},
         data: {},
@@ -70,7 +70,7 @@ $(document).ready(function() {
 
         $.ajax({
             type: 'DELETE',
-            url: 'https://' + host + ':'+ porta +'/empresa/deletar',
+            url: 'https://' + host + porta +'/empresa/deletar',
             async: false,
             headers: {Authorization: Final},
             data: JSON.stringify(IDEmpresa),

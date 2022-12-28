@@ -90,7 +90,7 @@ $(document).ready(function() {
                
         $.ajax({
             type: 'PUT',
-            url: 'https://' + host + ':'+ porta +'/usuario/atualizar',
+            url: 'https://' + host + porta +'/usuario/atualizar',
             headers: {Authorization: Final},
             data: JSON.stringify(Usuario),
             success: function (data) 
@@ -140,7 +140,7 @@ $(document).ready(function() {
 
     $.ajax({
         type: 'GET',
-        url: 'https://' + host + ':'+ porta +'/usuario/obter',
+        url: 'https://' + host + porta +'/usuario/obter',
         headers: {Authorization: Final},
         async: false,
         data: {},

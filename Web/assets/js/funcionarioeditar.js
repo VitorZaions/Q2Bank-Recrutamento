@@ -131,7 +131,7 @@ $(document).ready(function() {
                
         $.ajax({
             type: 'PUT',
-            url: 'https://' + host + ':'+ porta +'/funcionario/atualizar',
+            url: 'https://' + host + porta +'/funcionario/atualizar',
             headers: {Authorization: Final},
             data: JSON.stringify(Funcionario),
             success: function (data) 
@@ -181,7 +181,7 @@ $(document).ready(function() {
 
     $.ajax({
         type: 'GET',
-        url: 'https://' + host + ':'+ porta +'/funcionario/obter',
+        url: 'https://' + host + porta +'/funcionario/obter',
         headers: {Authorization: Final},
         data: {IDFuncionario: IDRecebido},
         async: false,

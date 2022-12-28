@@ -52,7 +52,7 @@ $(document).ready(function() {
 
         $.ajax({
             type: 'DELETE',
-            url: 'https://' + host + ':'+ porta +'/funcionario/deletar',
+            url: 'https://' + host + porta +'/funcionario/deletar',
             headers: {Authorization: Final},
             async: false,
             data: JSON.stringify(IDFuncionario),
@@ -112,7 +112,7 @@ $(document).ready(function() {
     
     $.ajax({
         type: 'GET',
-        url: 'https://' + host + ':'+ porta +'/funcionario/listar',
+        url: 'https://' + host + porta +'/funcionario/listar',
         headers: {Authorization: Final},
         data: {IDEmpresa: IDRecebido},
         async: false,

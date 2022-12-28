@@ -239,7 +239,7 @@ $(document).ready(function() {
                
         $.ajax({
             type: 'PUT',
-            url: 'https://' + host + ':'+ porta +'/empresa/atualizar',
+            url: 'https://' + host + porta +'/empresa/atualizar',
             headers: {Authorization: Final},
             data: JSON.stringify(Empresa),
             success: function (data) 
@@ -291,7 +291,7 @@ $(document).ready(function() {
 
     $.ajax({
         type: 'GET',
-        url: 'https://' + host + ':'+ porta +'/empresa/obter',
+        url: 'https://' + host + porta +'/empresa/obter',
         headers: {Authorization: Final},
         data: {IDEmpresa: IDRecebido},
         async: false,

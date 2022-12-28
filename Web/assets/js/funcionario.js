@@ -123,7 +123,7 @@ $(document).ready(function() {
                
         $.ajax({
             type: 'POST',
-            url: 'https://' + host + ':'+ porta +'/funcionario/novo',
+            url: 'https://' + host + porta +'/funcionario/novo',
             headers: {Authorization: Final},
             data: JSON.stringify(Funcionario),
             success: function (data) 

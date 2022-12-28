@@ -1,5 +1,5 @@
-var host = "localhost";
-var porta = "7190";
+var host = "http://api.vitorzaions.top/";
+var porta = "";
 
 
 function LimparConfig(){

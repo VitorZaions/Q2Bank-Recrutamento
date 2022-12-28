@@ -54,7 +54,7 @@ $(document).ready(function() {
         
         $.ajax({
             type: 'POST',
-            url: 'https://' + host + ':'+ porta +'/usuario/login',
+            url: 'https://' + host + porta +'/usuario/login',
             headers: {},
             data: JSON.stringify(Usuario),
             success: function (data) 

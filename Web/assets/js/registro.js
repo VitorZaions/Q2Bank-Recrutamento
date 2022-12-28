@@ -101,7 +101,7 @@ $(document).ready(function() {
     
     $.ajax({
         type: 'POST',
-        url: 'https://' + host + ':'+ porta +'/usuario/registro',
+        url: 'https://' + host + porta +'/usuario/registro',
         headers: {},
         data: JSON.stringify(Usuario),
         success: function (data) 
