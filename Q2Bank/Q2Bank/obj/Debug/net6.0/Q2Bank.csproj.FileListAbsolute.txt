@@ -105,3 +105,4 @@ C:\Users\vitor\Documents\Visual Studio 2022\Q2BankGit\Q2Bank---Recrutamento\Q2Ba
 C:\Users\vitor\Documents\Visual Studio 2022\Q2BankGit\Q2Bank---Recrutamento\Q2Bank\Q2Bank\bin\Debug\net6.0\xunit.assert.dll
 C:\Users\vitor\Documents\Visual Studio 2022\Q2BankGit\Q2Bank---Recrutamento\Q2Bank\Q2Bank\bin\Debug\net6.0\xunit.core.dll
 C:\Users\vitor\Documents\Visual Studio 2022\Q2BankGit\Q2Bank---Recrutamento\Q2Bank\Q2Bank\bin\Debug\net6.0\xunit.execution.dotnet.dll
+C:\Users\vitor\Documents\Visual Studio 2022\Q2BankGit\Q2Bank---Recrutamento\Q2Bank\Q2Bank\bin\Debug\net6.0\aws-beanstalk-tools-defaults.json

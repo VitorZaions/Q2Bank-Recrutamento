@@ -1,0 +1,20 @@
+
+{
+    "region" : "us-east-1",
+    "configuration" : "Release",
+    "framework"     : "net6.0",
+    "self-contained" : false,
+    "application"    : "Q2BankAPI",
+    "environment"    : "Q2BankAPI-prod",
+    "enable-xray"    : false,
+    "enhanced-health-type" : "basic",
+    "additional-options"   : "\"aws:autoscaling:launchconfiguration,SecurityGroups\"=\"sg-0bb4d6ed23f8e1490\";\"aws:ec2:vpc,Subnets\"=\"subnet-0cf47146ffb1210d4\"",
+    "solution-stack"       : "64bit Amazon Linux 2 v2.4.2 running .NET Core",
+    "environment-type"     : "SingleInstance",
+    "cname"                : "q2bankapi-prod",
+    "instance-type"        : "t1.micro",
+    "key-pair"             : "q2bank",
+    "instance-profile"     : "aws-elasticbeanstalk-ec2-role",
+    "service-role"         : "aws-elasticbeanstalk-service-role",
+    "proxy-server"         : "nginx"
+}

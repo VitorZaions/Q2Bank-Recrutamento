@@ -131,6 +131,9 @@ namespace Q2Bank.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("User")
+                        .IsUnique();
+
                     b.ToTable("Usuario");
                 });
 

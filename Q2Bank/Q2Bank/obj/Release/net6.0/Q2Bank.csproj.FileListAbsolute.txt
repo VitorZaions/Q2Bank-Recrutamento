@@ -56,3 +56,4 @@ C:\Users\vitor\Documents\Visual Studio 2022\Q2BankGit\Q2Bank---Recrutamento\Q2Ba
 C:\Users\vitor\Documents\Visual Studio 2022\Q2BankGit\Q2Bank---Recrutamento\Q2Bank\Q2Bank\obj\Release\net6.0\Q2Bank.pdb
 C:\Users\vitor\Documents\Visual Studio 2022\Q2BankGit\Q2Bank---Recrutamento\Q2Bank\Q2Bank\obj\Release\net6.0\Q2Bank.genruntimeconfig.cache
 C:\Users\vitor\Documents\Visual Studio 2022\Q2BankGit\Q2Bank---Recrutamento\Q2Bank\Q2Bank\obj\Release\net6.0\ref\Q2Bank.dll
+C:\Users\vitor\Documents\Visual Studio 2022\Q2BankGit\Q2Bank---Recrutamento\Q2Bank\Q2Bank\bin\Release\net6.0\aws-beanstalk-tools-defaults.json
