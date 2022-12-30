@@ -2,7 +2,7 @@
 
 Projeto proposto para o recrutamento na Q2Bank.
 
-## 🚀 Swagger
+## 🚀 Geral
 
 ### 📋 Rotas
 
