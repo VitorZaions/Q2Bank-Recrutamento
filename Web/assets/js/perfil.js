@@ -93,6 +93,7 @@ $(document).ready(function() {
             url: 'https://' + host + porta +'/usuario/atualizar',
             headers: {Authorization: Final},
             data: JSON.stringify(Usuario),
+            crossDomain: true,
             success: function (data) 
             {                 
                 $('#text_modal').html("Usuário atualizado com sucesso!");
@@ -144,6 +145,7 @@ $(document).ready(function() {
         headers: {Authorization: Final},
         async: false,
         data: {},
+        crossDomain: true,
         success: function (data) 
         { 
             ObjetoRecebido = data;

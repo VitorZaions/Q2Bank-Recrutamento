@@ -242,6 +242,7 @@ $(document).ready(function() {
             url: 'https://' + host + porta +'/empresa/atualizar',
             headers: {Authorization: Final},
             data: JSON.stringify(Empresa),
+            crossDomain: true,
             success: function (data) 
             { 
                 $('#text_modal').html("Empresa atualizada com sucesso!</a>");
@@ -295,6 +296,7 @@ $(document).ready(function() {
         headers: {Authorization: Final},
         data: {IDEmpresa: IDRecebido},
         async: false,
+        crossDomain: true,
         success: function (data) 
         { 
             ObjetoRecebido = data;

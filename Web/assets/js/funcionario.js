@@ -126,6 +126,7 @@ $(document).ready(function() {
             url: 'https://' + host + porta +'/funcionario/novo',
             headers: {Authorization: Final},
             data: JSON.stringify(Funcionario),
+            crossDomain: true,
             success: function (data) 
             { 
                 $('#text_modal').html("Funcionário criado com sucesso!</a>");

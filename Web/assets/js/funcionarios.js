@@ -56,6 +56,7 @@ $(document).ready(function() {
             headers: {Authorization: Final},
             async: false,
             data: JSON.stringify(IDFuncionario),
+            crossDomain: true,
             success: function (data) 
             { 
                 element.closest('tr').remove();
@@ -115,6 +116,7 @@ $(document).ready(function() {
         url: 'https://' + host + porta +'/funcionario/listar',
         headers: {Authorization: Final},
         data: {IDEmpresa: IDRecebido},
+        crossDomain: true,
         async: false,
         success: function (data) 
         { 

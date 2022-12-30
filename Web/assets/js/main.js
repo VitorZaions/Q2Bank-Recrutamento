@@ -21,7 +21,8 @@ $(document).ready(function() {
 
     if(User == "" || Token == "")
     {
-        window.location.assign("index.html");
+        console.log("sem user nem token");
+        //window.location.assign("login.html");
     }
 
     Final = "Bearer " + Token;
@@ -53,7 +54,7 @@ $(document).ready(function() {
             if(XMLHttpRequest.status != 404)
             {
                 LimparConfig();
-                window.location.assign("login.html"); 
+                window.location.assign("login.html");                 
             }
      
         },

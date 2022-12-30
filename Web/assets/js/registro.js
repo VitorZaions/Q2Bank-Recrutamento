@@ -104,6 +104,7 @@ $(document).ready(function() {
         url: 'https://' + host + porta +'/usuario/registro',
         headers: {},
         data: JSON.stringify(Usuario),
+        crossDomain: true,
         success: function (data) 
         { 
             $('#text_modal').html("Conta criada com sucesso, você já pode <a class='text-muted' href='login.html'>realizar login.</a>");

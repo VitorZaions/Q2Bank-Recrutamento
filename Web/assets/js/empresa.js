@@ -224,6 +224,7 @@ spOptions = {
             url: 'https://' + host + porta +'/empresa/novo',
             headers: {Authorization: Final},
             data: JSON.stringify(Empresa),
+            crossDomain: true,
             success: function (data) 
             { 
                 $('#text_modal').html("Empresa criada com sucesso!</a>");

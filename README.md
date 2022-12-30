@@ -18,9 +18,12 @@ Projeto proposto para o recrutamento na Q2Bank.
 
 ### 🔧 Informações
 
-A API está localizada na pasta Q2Bank, a parte do front-end na pasta Web.
+A API está localizada na pasta Q2BankAPI, a parte do front-end na pasta Web.
 
 URL Front-End: https://web.vitorzaions.top/login.html
+
 URL API: http://api.vitorzaions.top/
+
+Swagger: http://api.vitorzaions.top/swagger
 
 Toda estrutura está hospedada na AWS.

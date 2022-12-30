@@ -134,6 +134,7 @@ $(document).ready(function() {
             url: 'https://' + host + porta +'/funcionario/atualizar',
             headers: {Authorization: Final},
             data: JSON.stringify(Funcionario),
+            crossDomain: true,
             success: function (data) 
             { 
                 $('#text_modal').html("Funcionário atualizado com sucesso!</a>");
@@ -184,6 +185,7 @@ $(document).ready(function() {
         url: 'https://' + host + porta +'/funcionario/obter',
         headers: {Authorization: Final},
         data: {IDFuncionario: IDRecebido},
+        crossDomain: true,
         async: false,
         success: function (data) 
         { 

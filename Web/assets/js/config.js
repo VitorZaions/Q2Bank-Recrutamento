@@ -1,4 +1,4 @@
-var host = "https://api.vitorzaions.top";
+var host = "api.vitorzaions.top";
 var porta = "";
 
 
@@ -12,4 +12,5 @@ function LimparConfig(){
 $(document).ready(function() {    
 
 });
+
 

@@ -57,6 +57,7 @@ $(document).ready(function() {
             url: 'https://' + host + porta +'/usuario/login',
             headers: {},
             data: JSON.stringify(Usuario),
+            crossDomain: true,
             success: function (data) 
             { 
                 $('#text_modal').html("Login Efetuado com sucesso!</a>");
