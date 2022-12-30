@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\vitor\\Documents\\Visual Studio 2022\\Q2BankAPI\\Q2BankAPI\\Q2BankAPI.csproj": {}
+    "C:\\Users\\vitor\\Documents\\Visual Studio 2022\\Q2BankGit\\Q2Bank---Recrutamento\\Q2BankAPI\\Q2BankAPI\\Q2BankAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\vitor\\Documents\\Visual Studio 2022\\Q2BankAPI\\Q2BankAPI\\Q2BankAPI.csproj": {
+    "C:\\Users\\vitor\\Documents\\Visual Studio 2022\\Q2BankGit\\Q2Bank---Recrutamento\\Q2BankAPI\\Q2BankAPI\\Q2BankAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\vitor\\Documents\\Visual Studio 2022\\Q2BankAPI\\Q2BankAPI\\Q2BankAPI.csproj",
+        "projectUniqueName": "C:\\Users\\vitor\\Documents\\Visual Studio 2022\\Q2BankGit\\Q2Bank---Recrutamento\\Q2BankAPI\\Q2BankAPI\\Q2BankAPI.csproj",
         "projectName": "Q2BankAPI",
-        "projectPath": "C:\\Users\\vitor\\Documents\\Visual Studio 2022\\Q2BankAPI\\Q2BankAPI\\Q2BankAPI.csproj",
+        "projectPath": "C:\\Users\\vitor\\Documents\\Visual Studio 2022\\Q2BankGit\\Q2Bank---Recrutamento\\Q2BankAPI\\Q2BankAPI\\Q2BankAPI.csproj",
         "packagesPath": "C:\\Users\\vitor\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\vitor\\Documents\\Visual Studio 2022\\Q2BankAPI\\Q2BankAPI\\obj\\",
+        "outputPath": "C:\\Users\\vitor\\Documents\\Visual Studio 2022\\Q2BankGit\\Q2Bank---Recrutamento\\Q2BankAPI\\Q2BankAPI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

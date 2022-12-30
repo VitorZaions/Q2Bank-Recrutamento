@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ss094e4WaDAQqWOCKDLwcRDAos8GjuxY+PIvDSh0zO/BR2Kznc3CFo6yYLqBBdnbXjrTRzBKsVbwWnLcSEPHLw==",
+  "dgSpecHash": "t/9iKTsxMh5zVFCIy6xlICEWbfPvoC4KbAAsyjxm1SOOqfkoyYPyWShe+NTz9Ek9WD0r1ymYVdNxXZggY1XM3Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\vitor\\Documents\\Visual Studio 2022\\Q2BankAPI\\Q2BankAPI\\Q2BankAPI.csproj",
+  "projectFilePath": "C:\\Users\\vitor\\Documents\\Visual Studio 2022\\Q2BankGit\\Q2Bank---Recrutamento\\Q2BankAPI\\Q2BankAPI\\Q2BankAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\vitor\\.nuget\\packages\\amazon.lambda.apigatewayevents\\2.5.0\\amazon.lambda.apigatewayevents.2.5.0.nupkg.sha512",
     "C:\\Users\\vitor\\.nuget\\packages\\amazon.lambda.applicationloadbalancerevents\\2.1.0\\amazon.lambda.applicationloadbalancerevents.2.1.0.nupkg.sha512",
