@@ -22,8 +22,8 @@ A API está localizada na pasta Q2BankAPI, a parte do front-end na pasta Web.
 
 URL Front-End: https://web.vitorzaions.top/login.html
 
-URL API: http://api.vitorzaions.top/
+URL API: https://api.vitorzaions.top/
 
-Swagger: http://api.vitorzaions.top/swagger
+Swagger: https://api.vitorzaions.top/swagger
 
 Toda estrutura está hospedada na AWS.
